@@ -20,6 +20,21 @@ var article1 = {
         
 };
 
+var article2 = {
+  title:'Article two : Prajna',
+  heading: 'Article two',
+  date: 'Sptember 15,2017',
+  content: `<p>
+            Hello!!!
+            This is my second article.
+           </p>
+           <p>
+               I'm Prajna
+               doing engineering in computer science...
+           </p>`
+        
+};
+
 function createtemplate (data){
  var title = data.title;
  var heading = data.heading;
@@ -64,7 +79,7 @@ app.get('/article-one', function (req,res){
 });
 
 app.get('/article-two', function (req,res){
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));             
+ res.send(createtemplate(article2)); 
 });
 
 app.get('/article-three', function (req,res){
